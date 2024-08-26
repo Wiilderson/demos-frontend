@@ -1,50 +1,29 @@
-# React + TypeScript + Vite
+# Demos e Frames
+Aplicação para listar e editar demos que contenham frames de html embutidos.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Configurando localmente o ambiente dev:
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+primeiro, clone o repositório em sua máquina;
+segundo, acesse o diretório onde arquivo foi clonado;
+terceiro, faça a instalação dos pacotes com: 
+```bash
+npm install
 ```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+após instalação, inicialize o projeto com:
+```bash
+npm run dev
 ```
+abra a URL  ``` http://localhost:5173 ``` no seu navegador para ver o resultado.
+
+## Tecnologias utilizadas:
+ - [Vite](https://vitejs.dev/);
+ - [ReactJs](https://pt-br.reactjs.org/);
+ - [Typescript](https://www.typescriptlang.org/);
+ - [Redux-Toolkit](https://react-redux.js.org/introduction/getting-started);
+ - CSS padrão para exceções;
+
+ ### imagens do projeto: 
+
+<div align="center"> 
+  <img src="https://github.com/user-attachments/assets/92b39e22-3b3c-40ff-bc15-39958c0eb566" width="1000px"/>
+</div>
