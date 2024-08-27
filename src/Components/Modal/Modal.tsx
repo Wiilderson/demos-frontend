@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 type ModalProps = {
   idFrameHtml: string;
@@ -7,6 +9,7 @@ type ModalProps = {
 };
 
 function Modal({ frameHtml, onClose, idFrameHtml }: ModalProps) {
+  const navigate = useNavigate();
   const API_URL = `${
     import.meta.env.VITE_PUBLIC_API_URL
   }/frames/${idFrameHtml}`;
@@ -31,7 +34,12 @@ function Modal({ frameHtml, onClose, idFrameHtml }: ModalProps) {
         throw new Error(`Erro: ${response.statusText}`);
       }
       onClose();
+      navigate('/');
+      toast.success(`Frame atualizado!`, {
+        style: { whiteSpace: 'pre-line' },
+      });
     } catch (error) {
+      toast.error('Não foi possivel atualizar');
       console.log(error, 'ocorreu um erro ao atualizar!');
     }
   };

@@ -20,9 +20,9 @@ function Demos() {
       });
       setDemos(await response.json());
     };
-
     fetchData();
   }, [API_URL]);
+
   return (
     <>
       <div>

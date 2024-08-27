@@ -5,6 +5,7 @@ import { Frame } from '../Interfaces/Interface';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Modal from './Modal/Modal';
+import { Tooltip } from 'react-tooltip';
 
 function Frames() {
   const selectedDemo = useSelector(
@@ -46,9 +47,20 @@ function Frames() {
               onDoubleClick={() => handleOpenModal(frame)}
             >
               <div key={frame.id} className="frame">
-                <h5 className="mb-2 text-2xl font-bold p-3 tracking-tight text-gray-900 dark:text-white">
-                  Frame {frame.order}
-                </h5>
+                <Tooltip
+                  id="my-tooltip"
+                  style={{
+                    backgroundColor: '#3a3838',
+                  }}
+                />
+                <a
+                  data-tooltip-id="my-tooltip"
+                  data-tooltip-content="Dois clicks para editar"
+                >
+                  <h5 className="mb-2 text-2xl font-bold p-3 tracking-tight text-gray-900 dark:text-white">
+                    Frame {frame.order + 1}
+                  </h5>
+                </a>
                 <button
                   className="mb-3 rounded-lg border border-transparent px-4 py-2 text-base font-medium bg-[#1a1a1a] cursor-pointer transition duration-200 ease-in-out  hover:border-[#646cff]"
                   onClick={() => handleFrameClick(frame)}
@@ -74,7 +86,7 @@ function Frames() {
       {selectedFrame && (
         <div className="iframe-container">
           <h3 className="mb-2 text-xl font-bold">
-            Frame selecionado: {selectedFrame.order}
+            Frame selecionado: {selectedFrame.order + 1}
           </h3>
           <iframe
             srcDoc={selectedFrame.html}
